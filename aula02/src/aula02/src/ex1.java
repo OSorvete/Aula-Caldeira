@@ -8,7 +8,7 @@ public class ex1 {
         System.out.println("Me dê dois números.");
         number1 = scanner.nextDouble();
         number2 = scanner.nextDouble();
-        scanner.nextLine();  // bug que ocorre no scanner, assim que resolve 
+        scanner.nextLine();  // bug que ocorre no scanner, assim que resolve
         System.out.println("Qual operacão você deseja realizar?");
         System.out.println("Multiplicacão - Digite 1");
         System.out.println("Divisão - Digite 2");
@@ -23,6 +23,7 @@ public class ex1 {
             case "3" -> System.out.println("O resultado é: "  + (number1 - number2));
             case "4" -> System.out.println ("O resultado é: " + (number1 + number2));
             case "n" -> System.out.println ("Operacão CANCELADA.");
+            default -> System.out.println("INVÁLIDO");
         }
     }
 }
