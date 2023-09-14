@@ -13,9 +13,6 @@ public class contaBancaria {
     private String endereco;
     private double saldo;
 
-
-
-
     public void saque (double valor){
         this.saldo = saldo - valor;
         if (saldo < valor){
@@ -46,6 +43,11 @@ public class contaBancaria {
     }
 
     public void retornaInformacoes(){
+        System.out.println(this.nome);
+        System.out.println(this.cpf);
+        System.out.println(this.identificadorConta);
+        System.out.println(this.endereco);
+        System.out.println(this.hour);
     }
 }
 
