@@ -7,11 +7,15 @@ public class contaBancaria {
     public String currentTimeString = new SimpleDateFormat("HH:mm:ss").format(hour);
     public int currentTime = Integer.parseInt(String.valueOf(currentTimeString.charAt(0)) + String.valueOf(currentTimeString.charAt(1)));
     private String nome;
-    private String cpf;
+    private char cpf;
     private int identificadorConta;
     private String banco;
     private String endereco;
     private double saldo;
+
+    public void setCpf(char cpf) {
+        this.cpf = cpf;
+    }
 
     public void saque (double valor){
         this.saldo = saldo - valor;
@@ -36,6 +40,8 @@ public class contaBancaria {
     }
 
     public void transferencia (contaBancaria destino, double valor){
+        this.saldo = saldo - valor;
+        contaBancaria + valor;
     }
 
     public int retornaHorario(){
@@ -49,6 +55,7 @@ public class contaBancaria {
         System.out.println(this.endereco);
         System.out.println(this.hour);
     }
+
 }
 
 
