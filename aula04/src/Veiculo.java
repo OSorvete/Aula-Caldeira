@@ -3,7 +3,7 @@ public abstract class Veiculo {
     String modelo;
     int ano;
 
-    public veiculo(String nome){
+    public void veiculo(String nome){
         this.marca = marca;
     }
 

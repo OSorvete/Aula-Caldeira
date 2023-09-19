@@ -1,6 +1,8 @@
 public class Circulo extends FormaGeometrica{
-    @Override
-    public void calcularArea(double raio) {
 
+    private double raio;
+    @Override
+    public double calcularArea() {
+        return Math.PI * (raio * raio);
     }
 }
