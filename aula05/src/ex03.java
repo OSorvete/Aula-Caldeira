@@ -23,11 +23,19 @@ public class ex03 {
                 System.out.println("Selecione o que gostaria de adicionar");
                 String add = scanner.nextLine();
                 ListaDeTarefas.add(add);
+                System.out.println("Gostaria de adicionar mais itens?");
+                System.out.println("1 - sim");
+                System.out.println("2- não");
+                String option1 = scanner.nextLine();
+                switch(option1){
+                    case 1 ->
+                }
+
             }
             case "2" -> {
                 System.out.println("Selecione o que quer remover da lista");
                 String remove = scanner.nextLine();
-                ListaDeTarefas.remove(remove);ß
+                ListaDeTarefas.remove(remove);
             }
             case "3" -> scanner.close();
             default -> System.out.println("INVÁLIDO!!");
