@@ -1,3 +1,3 @@
-public abstract class Tributavel {
+public interface Tributavel {
     public abstract double calculaTributos();
 }
