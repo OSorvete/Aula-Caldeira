@@ -1,45 +1,57 @@
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collections;
+import java.util.Scanner;
 
 public class ex03 {
-    public static void main (String[] args){
-
-        List<String> ListaDeTarefas = new ArrayList<String>();
-
+    public static void main(String[] args)
+    {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("*******************");
-        System.out.println("LISTA DE TAREFAS");
-        System.out.println("1 - ADICIONAR TAREFA");
-        System.out.println("2 - REMOVER TAREFA");
-        System.out.println("3 - ENCERRAR");
-        System.out.println("*******************");
-        String option = scanner.nextLine();
+        ArrayList<Tarefa> tarefas = new ArrayList<Tarefa>();
+        String titulo;
+        String descricao;
+        String data;
+        int percorre = 1;
 
+        do
+        {
+            System.out.println("Digite o título da tarefa");
+            titulo = scanner.nextLine();
+            System.out.println("Digite o descrição da tarefa");
+            descricao = scanner.nextLine();
+            System.out.println("Digite o data da tarefa");
+            data = scanner.nextLine();
 
-        switch(option){
-            case "1" -> {
-                System.out.println("Selecione o que gostaria de adicionar");
-                String add = scanner.nextLine();
-                ListaDeTarefas.add(add);
-                System.out.println("Gostaria de adicionar mais itens?");
-                System.out.println("1 - sim");
-                System.out.println("2- não");
-                String option1 = scanner.nextLine();
-                switch(option1){
-                    case 1 ->
-                }
+            tarefas.add(new Tarefa(titulo,descricao,data));
 
-            }
-            case "2" -> {
-                System.out.println("Selecione o que quer remover da lista");
-                String remove = scanner.nextLine();
-                ListaDeTarefas.remove(remove);
-            }
-            case "3" -> scanner.close();
-            default -> System.out.println("INVÁLIDO!!");
+            System.out.println("Deseja continuar inserindo tarefas? (1) Sim | (Outros valores) Não");
+            percorre = scanner.nextInt();
+            scanner.nextLine();
+        }while (percorre == 1);
+
+        for (Tarefa item : tarefas) {
+            item.retornaTudo();
         }
 
+        System.out.println("Deseja excluir uma tarefa? (1) Sim | (Outros valores) Não");
+        int excluir = scanner.nextInt();
+
+        if(excluir == 1){
+            System.out.println("Digite o número da tarefa que deseja excluir:");
+            for(int i=0; i<tarefas.size(); i++){
+                System.out.println((i+1) + ". " + tarefas.get(i).getTitulo());
+            }
+
+            int indice = scanner.nextInt();
+            if(indice > 0 && indice <= tarefas.size()){
+                tarefas.remove(indice-1);
+                System.out.println("Tarefa excluída com sucesso!");
+            } else {
+                System.out.println("Número de tarefa inválido!");
+            }
+        }
+
+        for (Tarefa item : tarefas) {
+            item.retornaTudo();
+        }
     }
 }
